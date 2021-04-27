@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>FitnessPanda</title>
         <link rel="stylesheet" href="styles/style.css">
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="container bottom">
-                    <button type="button" class="signInBtn">Sign In</button>
+                    <a th:href="@{/sign_up}" class="signUpBtn">Sign Up</a>
                     <span class="passw">Forgot <a href="#">password?</a></span>
                 </div>
             </form>
