@@ -4,25 +4,26 @@
         <title>FitnessPanda</title>
         <link rel="stylesheet" href="styles/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
     </head>
 
     <body>
         <div class="login">
-            <form action="" method="POST">
+            <form th:action="@{/process_sign_up}" th:object="${user}" method="POST">
 
                 <div class="container">
                     <h1 id="signUpBanner">Sign Up</h1>
-                    <label for="uname"><strong>Username</strong></label>
-                    <input type="text" placeholder="Enter Email" name="uname" required>
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email" th:field="*{email}" placeholder="Enter Email" name="email" required>
 
-                    <label for="firstn"><strong>First Name</strong></label>
-                    <input type="text" placeholder="Enter First Name" name="firstn" required>
+                    <label for="first-name"><strong>First Name</strong></label>
+                    <input type="text" th:field="*{firstName}" placeholder="Enter First Name" name="first-name" required>
 
-                    <label for="lastn"><strong>Last Name</strong></label>
-                    <input type="text" placeholder="Enter Last Name" name="lastn" required>
+                    <label for="last-name"><strong>Last Name</strong></label>
+                    <input type="text" th:field="*{lastName}" placeholder="Enter Last Name" name="last-name" required>
 
-                    <label for="passw"><strong>Password</strong></label>
-                    <input type="password" placeholder="Enter Password" name="passw" required>
+                    <label for="password"><strong>Password</strong></label>
+                    <input type="password" th:field="*{password}" placeholder="Enter Password" name="password" required>
 
                     <button type="submit">Sign Up</button>
 
@@ -30,7 +31,7 @@
 
                 <div class="container bottom signup">
                     <span class="account">Your already have an account? </span>
-                    <a th:href="@{/login}">Login</a>
+                    <a th:href="@{/login}" class="link">Login</a>
                 </div>
             </form>
         </div>
